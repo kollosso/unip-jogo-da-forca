@@ -13,14 +13,13 @@ No terminal execute o comando ``npm run start``
 ---
 ## Docker 
 
-```
+
+```bash
 // Dentro do terminal
 
-docker build -t <nome da imagem>
+docker build -t <nome da imagem> .
 
-docker images
-
-docker exec -it <containerID> bash
+docker container run -it <nome da imagem> /bin/bash
 
 npm run start
 ```
