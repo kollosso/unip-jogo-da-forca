@@ -1,0 +1,11 @@
+{
+  "name": "unip-jogo-da-forca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kollosso/unip-jogo-da-forca.git",
+  "author": "denismedeirossdk <contato.denismedeiros@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

@@ -1,11 +1,26 @@
 # UNIP - Jogo da forca
 
-### Requisitos para executar
+## Requisitos para executar
 
-* NodeJs - versão v14.x
+* NodeJs - versão v12.x
 * NPM - versão v6.14.10
 
+---
+## Como executar 
 
-### Como executar 
+No terminal execute o comando ``npm run start``
 
-No terminal cole o comando ``npm run start``
+---
+## Docker 
+
+```
+// Dentro do terminal
+
+docker build -t <nome da imagem>
+
+docker images
+
+docker exec -it <containerID> bash
+
+npm run start
+```
