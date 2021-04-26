@@ -2,9 +2,9 @@
 
 Unip - Ciência da computação - CC7P17
 
-Denis Medeiros: RA: N2759E-1
+Denis Medeiros, RA: N2759E-1
 
-Ana Belíssimo: 
+Ana Clara Belissimo Martins, RA: N2728G-1
 
 ---
 
