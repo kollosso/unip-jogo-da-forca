@@ -1,5 +1,13 @@
 # UNIP - Jogo da forca
 
+Unip - Ciência da computação - CC7P17
+
+Denis Medeiros: RA: N2759E-1
+
+Ana Belíssimo: 
+
+---
+
 ## Requisitos para executar
 
 * NodeJs - versão v12.x
@@ -17,9 +25,11 @@ No terminal execute o comando ``npm run start``
 ```bash
 // Dentro do terminal
 
-docker build -t <nome da imagem> .
+docker build -t unipjogodaforca .
 
-docker container run -it <nome da imagem> /bin/bash
+docker container run -it --name jogodaforca unipjogodaforca
+
+docker exec -it jogodaforca bash
 
 npm run start
 ```
