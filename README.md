@@ -16,6 +16,11 @@ Ana Clara Belissimo Martins, RA: N2728G-1
 
 ---
 ## Como executar 
+```bash
+git clone https://github.com/kollosso/unip-jogo-da-forca.git
+
+cd unip-jogo-da-forca
+```
 
 No terminal execute o comando ``npm run start``
 
