@@ -7,7 +7,7 @@ Denis Medeiros, RA: N2759E-1
 Ana Clara Belissimo Martins, RA: N2728G-1
 
 ---
-![Preview](.github/Unip-Jogo-da-forca.gif)
+![Preview](.github/Client-frontend.png)
 
 ## Requisitos para executar
 
@@ -30,7 +30,7 @@ npm run start
 
 ```
 
-Acesse no navegador `http://localhost:8080`
+Acesse no navegador `http://localhost:8080/static/index.html`
 
 ---
 ### Docker 
@@ -48,4 +48,4 @@ docker exec -it jogodaforca bash
 npm run start
 ```
 
-Acesse no navegador `http://localhost:8080`
+Acesse no navegador `http://localhost:8080/static/index.html`
