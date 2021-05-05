@@ -11,91 +11,9 @@ const categories = {
   animais: ["Gato", "Hipopótamo", "Leão", "Girafa", "Pantera", "Vaca", "Cavalo", "Aranha", "Morcego"],
 }
 
-// Contador de falhas visual
-const hangmanPics = [
-  ` 
-    +---+
-    |   |
-        |
-        |
-        |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-        |
-        |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-    |   |
-        |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-   /|   |
-        |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-   /|\\  |
-        |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-   /|\\  |
-   /    |
-        |
-  =========`,
-
-  ` 
-    +---+
-    |   |
-    O   |
-   /|\\  |
-   / \\  |
-        |
-  =========`]
-
-
-const readline = require('readline');
-
-// Ler input do usuário no console
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: 'adivinhe> '
-});
-
-rl.on('line', (line) => {
-  checkWord(line);
-}).on('close', () => {
-  process.exit(0);
-});
-
-
 // Iniciar jogo
 function init() {
-  console.log('Bem-vindo ao jogo da forca, você precisa adivinhar qual sera a palavra escondida do tema sugerido.');
+  document.getElementById('begin-world').innerHTML = 'Bem-vindo ao jogo da forca, você precisa adivinhar qual sera a palavra escondida da categoria sugerida.'
 
   const options = ['frutas', 'marcas', 'animais'];
   const select = options[getRandom(3)];
@@ -103,8 +21,14 @@ function init() {
   dArray = Array(targetWord.length);
   failCount = 0;
 
-  console.log('A categoria é ' + select + '\n' + dArray.join('_ ') + '_');
-  rl.prompt();
+  document.getElementById('category').innerHTML = `A categoria é ${select}`
+  document.getElementById('target-guess').innerHTML = `Adivinhe: ${dArray.join('_ ') + '_'}`
+
+}
+
+function handleSubmit() {
+  const targetChar = document.getElementById('target-word').value
+  document.getElementById('btn-send').addEventListener('click', checkWord(targetChar))
 }
 
 // Checar se caractere existe na palavra
@@ -119,24 +43,25 @@ function checkWord(letter) {
     }
   }
 
-  tick ? tick = false : failCount++;
+  tick ? tick = false : failCount++
 
   // Se falhar em 10 tentativas perde
   if (failCount === 10) {
-    console.log(hangmanPics[failCount]);
-    console.log('Game over, você perdeu');
-    console.log('A palavra era ', targetWord);
-    init();
-    return;
+    document.getElementById('target-guess').innerHTML = `Game over, você perdeu, a palavra era, ${targetWord}`
+    return
   } else {
-    console.log(hangmanPics[failCount]);
+    document.getElementById('lb-fail').innerHTML = `Você errou ${failCount}`
   }
-  dArray.includes('_') ? rl.prompt() : console.log('Você ganhou !!');
-  console.log(dArray.join(' '));
+  // document.getElementById('lb-win').innerHTML = `${dArray.includes('_')}`
+  dArray.includes('_') ? rl.prompt() : console.log('Você ganhou !!')
+  document.getElementById('target-guess').innerHTML = `Você ganhou !! ${dArray.join(' ')}`
 }
 
 function getRandom(max) {
-  return Math.floor(Math.random() * (max));
+  return Math.floor(Math.random() * (max))
 }
 
-init();
+module.exports = {
+  init: init,
+  handleSubmit: handleSubmit
+}
