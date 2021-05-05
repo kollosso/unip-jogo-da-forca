@@ -16,11 +16,24 @@ Ana Clara Belissimo Martins, RA: N2728G-1
 
 ---
 ## Como executar 
+```bash
+git clone https://github.com/kollosso/unip-jogo-da-forca.git
 
-No terminal execute o comando ``npm run start``
+cd unip-jogo-da-forca
+```
+---
+### Maquina
+```bash
+npm install
+
+npm run start
+
+```
+
+Acesse no navegador `http://localhost:8080`
 
 ---
-## Docker 
+### Docker 
 
 
 ```bash
@@ -34,3 +47,5 @@ docker exec -it jogodaforca bash
 
 npm run start
 ```
+
+Acesse no navegador `http://localhost:8080`
