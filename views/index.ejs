@@ -10,15 +10,19 @@
 
 <body>
   <h1>Hangman</h1>
-  <button class="btn-begin" onclick="">Começar</button>
+  <button id="btn-start" onclick="<%=hangman.init()%>">Começar</button>
   <p id="begin-world"></p>
   <p id="fail-target"></p>
   <p id="category"></p>
   <p id="target-guess"></p>
+  <strong id="lb-fail"></strong>
   <input id="target-word" type="text">
-  <button class="btn-send" type="button" onclick="">Enviar</button>
+  <button id="btn-send" type="submit" onclick="<%= hangman.handleSubmit()%>">Enviar</button>
+  <strong id="lb-win"></strong>
 </body>
 
+
+<script src="../src/server.js"></script>
 <script src="../hangman.js"></script>
 
 </html>
